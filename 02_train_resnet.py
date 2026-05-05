@@ -14,7 +14,7 @@ import random
 # Config
 DATA_PATH = "data/FracAtlas/images/"
 BATCH_SIZE = 32
-EPOCHS = 10
+EPOCHS = 1
 LEARNING_RATE = 0.001
 DEVICE = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 print(f"Using device: {DEVICE}")
@@ -29,7 +29,6 @@ set_seed()
 
 # Custom loader
 def safe_loader(path):
-    """Load image with error handling"""
     try:
         with open(path, 'rb') as f:
             img = Image.open(f)
@@ -45,15 +44,13 @@ train_transform = transforms.Compose([
     transforms.RandomHorizontalFlip(p=0.5),
     transforms.RandomRotation(10),
     transforms.ToTensor(),
-    transforms.Normalize(mean=[0.485, 0.456, 0.406],
-                        std=[0.229, 0.224, 0.225])
+    transforms.Normalize(mean=[0.485, 0.456, 0.406], std=[0.229, 0.224, 0.225])
 ])
 
 test_transform = transforms.Compose([
     transforms.Resize((224, 224)),
     transforms.ToTensor(),
-    transforms.Normalize(mean=[0.485, 0.456, 0.406],
-                        std=[0.229, 0.224, 0.225])
+    transforms.Normalize(mean=[0.485, 0.456, 0.406], std=[0.229, 0.224, 0.225])
 ])
 
 # Custom dataset
@@ -228,9 +225,9 @@ print("Saved ViT metrics to outputs/metrics/resnet_metrics.json")
 cm = confusion_matrix(all_labels, all_preds)
 print(f"\nConfusion Matrix:")
 print(f"            Predicted")
-print(f"            Neg   Pos")
-print(f"Actual Neg  {cm[0,0]:4d}  {cm[0,1]:4d}")
-print(f"       Pos  {cm[1,0]:4d}  {cm[1,1]:4d}")
+print(f"            Neg     Pos")
+print(f"Actual  Neg  {cm[0,0]:4d}  {cm[0,1]:4d}")
+print(f"        Pos  {cm[1,0]:4d}  {cm[1,1]:4d}")
 
 # Save plots
 os.makedirs("outputs/figures", exist_ok=True)
