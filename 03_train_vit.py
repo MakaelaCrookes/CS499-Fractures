@@ -15,7 +15,7 @@ import random
 # Config
 DATA_PATH = "data/FracAtlas/images/"
 BATCH_SIZE = 16
-EPOCHS = 2
+EPOCHS = 10
 LEARNING_RATE = 5e-5
 DEVICE = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 print(f"Using device: {DEVICE}")
