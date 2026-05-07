@@ -1,0 +1,56 @@
+h1 {
+    font-size: 200%;
+    text-align: center;
+    padding: 10px;
+    margin: auto;
+    background-color: rgb(65, 93, 78);
+}
+
+h2 {
+    font-size: 120%;
+    text-align: center;
+    background-color: rgb(65, 93, 78);
+    margin: auto;
+    padding: 2%;
+}
+
+h3 {
+    font-size: 160%;
+    text-align: center;
+    padding: 10px;
+    margin: auto;
+    background-color: rgb(100, 140, 117);
+}
+
+h4 {
+    font-size: 160%;
+    text-align: left;
+}
+
+.Main {
+    display: flex;
+    background-color: rgb(146, 182, 162);
+}
+
+.Element {
+    text-align: center;
+    border: 3px solid black;
+    padding: 1%; /*text*/
+    margin: 5% 3%; /*div spacing*/
+    flex-direction: row;
+    background-color: rgb(100, 140, 117);
+}
+
+.Sub {
+    text-align: center;
+    border: 3px solid black;
+    padding: 1% 20%; /*text*/
+    margin: 5% 15%; /*div spacing*/
+    background-color: rgb(100, 140, 117);
+}
+
+footer {
+    background-color: rgb(100, 140, 117);
+    padding: 2%; /*text*/
+    margin: auto; /*div spacing*/
+}
